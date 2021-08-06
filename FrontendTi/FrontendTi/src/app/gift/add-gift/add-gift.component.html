@@ -1,0 +1,15 @@
+<div class="add-gift">
+  <form [formGroup]="addGiftForm" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <span class="icon"></span
+      ><input
+        type="text"
+        formControlName="description"
+        id="description"
+        name="description"
+      />
+    </div>
+
+    <button [disabled]="addGiftForm.invalid">add</button>
+  </form>
+</div>

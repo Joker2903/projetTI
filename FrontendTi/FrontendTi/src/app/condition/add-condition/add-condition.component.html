@@ -1,0 +1,29 @@
+<div class="add-condition">
+  <form [formGroup]="addConditionForm" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label for="numberOfClient">numberOfClient</label>
+      <input type="text" id="numberOfClient" formControlName="numberOfClient" />
+    </div>
+    <div class="form-control">
+      <label for="startDate">startDate</label>
+      <input type="date" id="startDate" formControlName="startDate" />
+    </div>
+    <div class="form-control">
+      <label for="endDate">endDate</label>
+      <input type="date" id="endDate" formControlName="endDate" />
+    </div>
+    <div class="form-control">
+      <label for="expiration">expiration</label>
+      <input type="text" id="expiration" formControlName="expiration" />
+    </div>
+    <div class="form-control">
+      <label for="giftId">giftId</label>
+      <select name="giftId" id="giftId" formControlName="giftId">
+        <option value="1">New Car</option>
+        <option value="2">New Wife</option>
+        <option value="3">New World</option>
+      </select>
+    </div>
+    <button [disabled]="addConditionForm.invalid">Add</button>
+  </form>
+</div>

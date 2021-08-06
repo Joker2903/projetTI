@@ -1,0 +1,51 @@
+<div class="add-client">
+  <form [formGroup]="addClientForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstname">firstname</label>
+      <input
+        type="text"
+        id="firstname"
+        formControlName="firstname"
+        name="firstname"
+      />
+    </div>
+    <div>
+      <label for="lastname">lastname</label>
+      <input
+        type="text"
+        id="lastname"
+        formControlName="lastname"
+        name="lastname"
+      />
+    </div>
+    <div>
+      <label for="mail">mail</label>
+      <input type="text" id="mail" formControlName="mail" name="mail" />
+    </div>
+    <div>
+      <label for="password">password</label>
+      <input
+        type="text"
+        id="password"
+        formControlName="password"
+        name="password"
+      />
+    </div>
+    <div>
+      <label for="sponsorID">Sponsor</label>
+      <select
+        name="sponsorID"
+        id="sponsorID"
+        formControlName="sponsorID"
+        name="sponsorID"
+      >
+        <option value="1">Jean Pierre</option>
+        <option value="2">Jean Marcel</option>
+        <option value="3">Jean Zdeunon</option>
+      </select>
+    </div>
+    <div>
+      <button [disabled]="addClientForm.invalid">add</button>
+    </div>
+  </form>
+</div>
