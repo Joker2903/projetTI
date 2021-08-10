@@ -1,0 +1,42 @@
+<div class="single-client container">
+  <form [formGroup]="updateClientForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstname">firstname</label>
+      <input
+        type="text"
+        id="firstname"
+        formControlName="firstname"
+        name="firstname"
+      />
+    </div>
+    <div>
+      <label for="lastname">lastname</label>
+      <input
+        type="text"
+        id="lastname"
+        formControlName="lastname"
+        name="lastname"
+      />
+    </div>
+    <div>
+      <label for="mail">mail</label>
+      <input type="text" id="mail" formControlName="mail" name="mail" />
+    </div>
+    <div>
+      <p>SPONSOR :{{ client.sponsorID }}</p>
+      <label for="sponsorID">Sponsor</label>
+      <select name="sponsorID" id="sponsorID" formControlName="sponsorID">
+        <option
+          *ngFor="let singleClient of clients"
+          [value]="singleClient.clientID"
+          selected="client.sponsorID"
+        >
+          {{ singleClient.lastname + " " + singleClient.firstname }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <button [disabled]="updateClientForm.invalid">add</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,7 @@
+<div class="detail-client item" (click)="navigateToSingleClient()">
+    <p class="firstname">{{client.firstname}}</p>
+    <p class="lastname">{{client.lastname}}</p>
+    <p class="mail">{{client.mail}}</p>
+    <p class="sponsorID">{{client.sponsorID}}</p>
+    <button class="delete delete-client" (click)="emitDeletedClient()">Delete</button>
+</div>

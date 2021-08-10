@@ -1,0 +1,22 @@
+header{
+    /* width: 100; */
+    border-bottom: 2px solid black;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding:1rem 0;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+li{
+    list-style: none;
+    padding: 0.7rem;
+}

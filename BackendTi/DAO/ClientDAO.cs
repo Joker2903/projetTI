@@ -73,7 +73,6 @@ namespace BackendTi.DAO
         }
          public static ClientDTO Create (ClientDTO client)
         {
-    
 
             using (var connection = Database.GetConnection())
             {
@@ -84,7 +83,7 @@ namespace BackendTi.DAO
                 command.Parameters.AddWithValue($"{FIELD_FIRSTNAME}", client.Firstname);
                 command.Parameters.AddWithValue($"{FIELD_LASTNAME}", client.Lastname);
                 command.Parameters.AddWithValue($"{FIELD_MAIL}", client.Mail);
-                if (string.IsNullOrEmpty(client.SponsorID.ToString())){
+                if (string.IsNullOrEmpty(client.SponsorID.ToString()) || client.SponsorID == 0){
                     command.Parameters.AddWithValue($"{FIELD_SPONSORID}", DBNull.Value);
                 } else {
                     command.Parameters.AddWithValue($"{FIELD_SPONSORID}", client.SponsorID);

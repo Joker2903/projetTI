@@ -1,0 +1,15 @@
+<div class="signin container">
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="login">login</label>
+            <input type="text" id="login" formControlName="login" name="login" />
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="text" id="password" formControlName="password" name="password" />
+        </div>
+        <div>
+            <button [disabled]="signinForm.invalid">sign in</button>
+        </div>
+    </form>
+</div>

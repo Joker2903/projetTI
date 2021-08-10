@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\projet\\projetTI\\BackendTi\\BackendTi.csproj",
+  "FilePath": "d:\\HELHA\\HELHA\\robin_claes\\projetTI\\BackendTi\\BackendTi.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -12429,6 +12429,61 @@
         "Metadata": {
           "Runtime.Name": "ITagHelper",
           "Common.TypeName": "Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper"
+        }
+      },
+      {
+        "HashCode": -1862426603,
+        "Kind": "ITagHelper",
+        "Name": "Microsoft.AspNetCore.SpaServices.Prerendering.PrerenderTagHelper",
+        "AssemblyName": "Microsoft.AspNetCore.SpaServices",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "*",
+            "Attributes": [
+              {
+                "Name": "asp-prerender-module"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "ITagHelper",
+            "Name": "asp-prerender-module",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ModuleName"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "asp-prerender-export",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ExportName"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "asp-prerender-data",
+            "TypeName": "System.Object",
+            "Metadata": {
+              "Common.PropertyName": "CustomDataParameter"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "asp-prerender-timeout",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "TimeoutMillisecondsParameter"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "Microsoft.AspNetCore.SpaServices.Prerendering.PrerenderTagHelper"
         }
       },
       {

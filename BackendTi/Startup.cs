@@ -10,6 +10,7 @@ namespace BackendTi
 {
     public class Startup
     {
+        private static readonly string PATH_ANGULAR_APP = "wwwroot/js/AngularApp/";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,6 +24,8 @@ namespace BackendTi
             services.AddCors();
             // Prevent JSON serialization errors in token
             services.AddControllers();
+
+            services.AddSpaStaticFiles(spa => spa.RootPath = PATH_ANGULAR_APP);
             // .AddNewtonsoftJson(options =>
             //     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             // );
@@ -39,8 +42,12 @@ namespace BackendTi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
             //app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+            
+            app.UseRouting();
+            
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
@@ -54,6 +61,7 @@ namespace BackendTi
             {
                 endpoints.MapControllers();
             });
+            app.UseSpa(spa => spa.Options.SourcePath = PATH_ANGULAR_APP);
         }
     }
 }
