@@ -1,0 +1,11 @@
+<div class="notifications container" *ngFor="let notifiedClient of notifiedClients">
+    <!-- <p class="clientID">{{notifiedClient.clientID}}</p>
+    <p class="firstname">{{notifiedClient.firstname}}</p>
+    <p class="lastname">{{notifiedClient.lastname}}</p>
+    <p class="conditionID">{{notifiedClient.conditionID}}</p>
+    <p class="numberOfClient">{{notifiedClient.numberOfClient}}</p> -->
+    <p class="notify-msg">{{notifiedClient.firstname + " " + notifiedClient.lastname}} has sponsored
+        {{notifiedClient.numberOfClient}} clients. Give him his gift !</p>
+    <button class="btn give-gift" (click)="giveGift(notifiedClient.clientID, notifiedClient.conditionID)">Give
+        gift</button>
+</div>

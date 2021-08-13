@@ -2,7 +2,6 @@ import { Component, forwardRef, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
-  NG_VALUE_ACCESSOR,
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,13 +13,6 @@ import { ClientService } from 'src/app/services/client.service';
   selector: 'app-single-client',
   templateUrl: './single-client.component.html',
   styleUrls: ['./single-client.component.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SingleClientComponent),
-      multi: true,
-    },
-  ],
 })
 export class SingleClientComponent implements OnInit, OnDestroy {
   private subscriptionsClients: Subscription[] = [];
@@ -33,7 +25,7 @@ export class SingleClientComponent implements OnInit, OnDestroy {
     private clientService: ClientService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getClients();

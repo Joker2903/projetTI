@@ -11,11 +11,11 @@ export class DetailConditionComponent implements OnInit {
   @Input()
   condition: Condition = new Condition();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   navigateToSingleCondition() {
-    this.router.navigate([`condition/${this.condition.ConditionID}`]);
+    this.router.navigate([`condition/${this.condition.conditionID}`]);
   }
 }

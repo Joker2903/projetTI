@@ -1,8 +1,8 @@
 export interface ConditionDTO {
-    ConditionID: number
-    NumberOfClient: number
-    StartDate: Date
-    EndDate: Date
-    Expiration: number
-    GiftId: number
+    conditionID: number
+    numberOfClient: number
+    startDate: Date
+    endDate: Date
+    expiration: number
+    giftId: number
 }

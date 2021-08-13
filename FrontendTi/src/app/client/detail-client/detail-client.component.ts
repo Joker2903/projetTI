@@ -19,7 +19,8 @@ export class DetailClientComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emitDeletedClient() {
+  emitDeletedClient(event: Event) {
+    event.stopPropagation()
     this.deletedClient.next(this.client.clientID)
   }
 

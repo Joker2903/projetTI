@@ -23,6 +23,13 @@ namespace BackendTi.Controllers
             return Ok(ClientDAO.GetByID(id));
         }
 
+        [HttpGet]
+        [Route("sponsor/{id}")]
+        public ActionResult<int> GetSponsoredClientByID(int id)
+        {
+            return Ok(ClientDAO.GetSponsoredClientByID(id));
+        }
+
         [HttpPost]
         
         public ActionResult<ClientDTO> Create([FromBody]ClientDTO client)

@@ -9,7 +9,7 @@ import { Gift } from 'src/app/model/gift';
 })
 export class AddGiftComponent implements OnInit {
   addGiftForm: FormGroup = this.initForm();
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -23,7 +23,7 @@ export class AddGiftComponent implements OnInit {
   onSubmit() {
     console.log(this.addGiftForm.controls);
     const gift = new Gift();
-    gift.Description = this.addGiftForm.get('description')?.value;
+    gift.description = this.addGiftForm.get('description')?.value;
     console.log(gift);
   }
 }

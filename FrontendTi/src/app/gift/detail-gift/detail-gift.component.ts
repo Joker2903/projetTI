@@ -13,15 +13,16 @@ export class DetailGiftComponent implements OnInit {
   @Output()
   deletedGift: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  emitDeletedGift() {
-    this.deletedGift.next(this.gift.GiftID);
+  emitDeletedGift(event: Event) {
+    event.stopPropagation();
+    this.deletedGift.next(this.gift.giftID);
   }
 
   navigateToSingleGift() {
-    this.router.navigate([`client/${this.gift.GiftID}`]);
+    this.router.navigate([`gift/${this.gift.giftID}`]);
   }
 }

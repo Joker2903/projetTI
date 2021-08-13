@@ -1,6 +1,9 @@
 <div class="list-client container item-grids">
-    <ng-container *ngFor="let client of clients">
-        <app-detail-client [client]="client" (deletedClient)="deleteQuestion($event)"></app-detail-client>
-    </ng-container>
-
+  <ng-container *ngFor="let client of clients">
+    <app-detail-client
+      [client]="client"
+      (deletedClient)="deleteQuestion($event)"
+    ></app-detail-client>
+  </ng-container>
+  <button class="add add-client" (click)="AddClient()">add</button>
 </div>

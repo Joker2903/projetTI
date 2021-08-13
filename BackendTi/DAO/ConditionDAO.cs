@@ -15,6 +15,7 @@ namespace BackendTi.DAO
         public static readonly string FIELD_GIFTID = "GiftId";
 
         private static readonly string REQ_QUERY = $"select * from {TABLE_NAME}";
+        private static readonly string REQ_QUERY_CONDITION_GIFT = $"select {TABLE_NAME}.{FIELD_CONDITIONID}, {TABLE_NAME}.{FIELD_NUMBEROFCLIENT}, gift.{GiftDAO.FIELD_GIFTID}, gift.{GiftDAO.FIELD_DESCRIPTION} from {TABLE_NAME} inner join gift on {TABLE_NAME}.{FIELD_GIFTID} = gift.{GiftDAO.FIELD_GIFTID} order by {TABLE_NAME}.{FIELD_NUMBEROFCLIENT}";
         private static readonly string REQ_GET = REQ_QUERY + $" where {FIELD_CONDITIONID} = @{FIELD_CONDITIONID}";
         private static readonly string REQ_POST =
             $"insert into {TABLE_NAME} ({FIELD_NUMBEROFCLIENT}, {FIELD_STARTDATE},{FIELD_ENDDATE}, {FIELD_EXPIRATION},{FIELD_GIFTID}) " +
@@ -39,6 +40,26 @@ namespace BackendTi.DAO
                 }
 
                 return condition;
+            }
+        }
+        public static List<ConditionGiftDTO> QueryGiftCondition()
+        {
+            List<ConditionGiftDTO> conditionGifts = new List<ConditionGiftDTO>();
+
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_QUERY_CONDITION_GIFT;
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    conditionGifts.Add(new ConditionGiftDTO(reader));
+                }
+
+                return conditionGifts;
             }
         }
     

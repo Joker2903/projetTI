@@ -12,7 +12,7 @@ export class ListGiftComponent implements OnInit {
   private subscriptionsGifts: Subscription[] = [];
   public gifts: Gift[] = [];
 
-  constructor(private giftServices: GiftService) {}
+  constructor(private giftServices: GiftService) { }
 
   ngOnInit(): void {
     this.getGifts();
@@ -34,9 +34,11 @@ export class ListGiftComponent implements OnInit {
     this.subscriptionsGifts.push(sub);
   }
 
-  deleteQuestion(idEmitted: number) {
+  deleteGift(idEmitted: number) {
+    console.log("ID GIFT : " + idEmitted);
+
     const sub = this.giftServices.delete(idEmitted).subscribe(() => {
-      this.gifts = this.gifts.filter((gift) => gift.GiftID !== idEmitted);
+      this.gifts = this.gifts.filter((gift) => gift.giftID !== idEmitted);
     });
     console.log(this.gifts);
 

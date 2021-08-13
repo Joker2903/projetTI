@@ -29,9 +29,9 @@ namespace BackendTi.DTO
 
         public ClientConditionDTO(SqlDataReader reader)
         {
-            this.clientId = Convert.ToInt32(reader[ConditionDAO.FIELD_CONDITIONID].ToString());
-            this.conditionId = Convert.ToInt32(reader[ConditionDAO.FIELD_NUMBEROFCLIENT].ToString());
-            this.completedDate = Convert.ToDateTime(reader[ConditionDAO.FIELD_STARTDATE]).Date;
+            this.clientId = Convert.ToInt32(reader[ClientConditionDAO.FIELD_CLIENTID].ToString());
+            this.conditionId = Convert.ToInt32(reader[ClientConditionDAO.FIELD_CONDITIONID].ToString());
+            this.completedDate = Convert.ToDateTime(reader[ClientConditionDAO.FIELD_COMPLETEDDATE]).Date;
         }
     }
 }

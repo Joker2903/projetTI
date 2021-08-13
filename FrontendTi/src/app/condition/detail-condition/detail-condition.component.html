@@ -1,7 +1,7 @@
 <div class="detail-condition item" (click)="navigateToSingleCondition()">
-  <p class="numberOfClient">{{ condition.numberOfClient }}</p>
-  <p class="startDate">{{ condition.startDate }}</p>
-  <p class="endDate">{{ condition.endDate }}</p>
+  <p class="numberOfClient">{{ condition.numberOfClient}}</p>
+  <p class="startDate">{{ condition.startDate | date:'longDate'}}</p>
+  <p class="endDate">{{ condition.endDate | date:'longDate'}}</p>
   <p class="expiration">{{ condition.expiration }}</p>
-  <p class="giftID">{{ condition.giftID }}</p>
+  <p class="giftID">{{ condition.giftId }}</p>
 </div>

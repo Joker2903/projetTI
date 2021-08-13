@@ -1,42 +1,42 @@
 import { ConditionDTO } from '../dto/conditionDTO';
 
 export class Condition {
-  private _ConditionID: number;
+  private _conditionID: number;
 
-  private _NumberOfClient: number;
+  private _numberOfClient: number;
 
-  private _StartDate: Date;
+  private _startDate: Date;
 
-  private _EndDate: Date;
+  private _endDate: Date;
 
-  private _Expiration: number;
+  private _expiration: number;
 
-  private _GiftId: number;
+  private _giftId: number;
 
   constructor(
-    ConditionID: number = -1,
-    NumberOfClient: number = 0,
-    StartDate: Date = new Date(),
-    EndDate: Date = new Date(),
-    Expiration: number = 0,
-    GiftId: number = -1
+    conditionID: number = -1,
+    numberOfClient: number = 0,
+    startDate: Date = new Date(),
+    endDate: Date = new Date(),
+    expiration: number = 0,
+    giftId: number = -1
   ) {
-    this._ConditionID = ConditionID;
-    this._NumberOfClient = NumberOfClient;
-    this._StartDate = StartDate;
-    this._EndDate = EndDate;
-    this._Expiration = Expiration;
-    this._GiftId = GiftId;
+    this._conditionID = conditionID;
+    this._numberOfClient = numberOfClient;
+    this._startDate = startDate;
+    this._endDate = endDate;
+    this._expiration = expiration;
+    this._giftId = giftId;
   }
 
   toConditionDTO(): ConditionDTO {
     return {
-      ConditionID: this._ConditionID,
-      NumberOfClient: this._NumberOfClient,
-      StartDate: this._StartDate,
-      EndDate: this._EndDate,
-      Expiration: this._Expiration,
-      GiftId: this._GiftId,
+      conditionID: this._conditionID,
+      numberOfClient: this._numberOfClient,
+      startDate: this._startDate,
+      endDate: this._endDate,
+      expiration: this._expiration,
+      giftId: this._giftId,
     };
   }
 
@@ -47,44 +47,44 @@ export class Condition {
 
   equals(obj: any): boolean {
     if (obj instanceof Condition) {
-      return this._ConditionID === (<Condition>obj)._ConditionID;
+      return this._conditionID === (<Condition>obj)._conditionID;
     }
     return false;
   }
-  public get ConditionID(): number {
-    return this._ConditionID;
+  public get conditionID(): number {
+    return this._conditionID;
   }
-  public set ConditionID(value: number) {
-    this._ConditionID = value;
+  public set conditionID(value: number) {
+    this._conditionID = value;
   }
-  public get NumberOfClient(): number {
-    return this._NumberOfClient;
+  public get numberOfClient(): number {
+    return this._numberOfClient;
   }
-  public set NumberOfClient(value: number) {
-    this._NumberOfClient = value;
+  public set numberOfClient(value: number) {
+    this._numberOfClient = value;
   }
-  public get StartDate(): Date {
-    return this._StartDate;
+  public get startDate(): Date {
+    return this._startDate;
   }
-  public set StartDate(value: Date) {
-    this._StartDate = value;
+  public set startDate(value: Date) {
+    this._startDate = value;
   }
-  public get EndDate(): Date {
-    return this._EndDate;
+  public get endDate(): Date {
+    return this._endDate;
   }
-  public set EndDate(value: Date) {
-    this._EndDate = value;
+  public set endDate(value: Date) {
+    this._endDate = value;
   }
-  public get Expiration(): number {
-    return this._Expiration;
+  public get expiration(): number {
+    return this._expiration;
   }
-  public set Expiration(value: number) {
-    this._Expiration = value;
+  public set expiration(value: number) {
+    this._expiration = value;
   }
-  public get GiftId(): number {
-    return this._GiftId;
+  public get giftId(): number {
+    return this._giftId;
   }
-  public set GiftId(value: number) {
-    this._GiftId = value;
+  public set giftId(value: number) {
+    this._giftId = value;
   }
 }

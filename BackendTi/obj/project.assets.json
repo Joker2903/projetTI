@@ -1476,19 +1476,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nath2\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\HELHA\\HELHA\\robin_claes\\projetTI\\BackendTi\\BackendTi.csproj",
+      "projectUniqueName": "D:\\projet\\projetTI\\BackendTi\\BackendTi.csproj",
       "projectName": "BackendTi",
-      "projectPath": "d:\\HELHA\\HELHA\\robin_claes\\projetTI\\BackendTi\\BackendTi.csproj",
-      "packagesPath": "C:\\Users\\nath2\\.nuget\\packages\\",
-      "outputPath": "d:\\HELHA\\HELHA\\robin_claes\\projetTI\\BackendTi\\obj\\",
+      "projectPath": "D:\\projet\\projetTI\\BackendTi\\BackendTi.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\projet\\projetTI\\BackendTi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nath2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

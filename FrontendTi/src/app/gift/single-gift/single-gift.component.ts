@@ -21,7 +21,7 @@ export class SingleGiftComponent implements OnInit {
     private giftService: GiftService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getGifts();
@@ -37,7 +37,7 @@ export class SingleGiftComponent implements OnInit {
 
   initForm(): FormGroup {
     return (this.updateGiftForm = this.formBuilder.group({
-      Description: [this.gift.Description, Validators.required],
+      Description: [this.gift.description, Validators.required],
     }));
   }
 
@@ -60,7 +60,7 @@ export class SingleGiftComponent implements OnInit {
 
   onSubmit() {
     console.log(this.updateGiftForm.controls);
-    this.gift.Description = this.updateGiftForm.get('Description').value;
+    this.gift.description = this.updateGiftForm.get('Description').value;
     console.log(this.gift);
     const sub = this.giftService
       .put(this.gift.toGiftDTO())

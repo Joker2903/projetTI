@@ -16,6 +16,7 @@ namespace BackendTi.DAO
         public static readonly string FIELD_PASSWORD = "Password";
 
         private static readonly string REQ_QUERY = $"select * from {TABLE_NAME}";
+        private static readonly string REQ_SPONSORED_COUNT= $"select count(*) as numberSponsoredClient from {TABLE_NAME} where {FIELD_SPONSORID} = @{FIELD_SPONSORID}";
         private static readonly string REQ_GET = REQ_QUERY + $" where {FIELD_ID} = @{FIELD_ID}";
         private static readonly string REQ_POST =
             $"insert into {TABLE_NAME} ({FIELD_FIRSTNAME}, {FIELD_LASTNAME},{FIELD_MAIL}, {FIELD_SPONSORID},{FIELD_PASSWORD}) " +
@@ -69,6 +70,23 @@ namespace BackendTi.DAO
                 }
 
                 return null;
+            }
+        }
+        public static int GetSponsoredClientByID (int id)
+        {
+    
+
+            using (var connection = Database.GetConnection())
+            {
+                int numberSponsoredClient = 0;
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_SPONSORED_COUNT;
+                command.Parameters.AddWithValue($"{FIELD_SPONSORID}", id);
+
+                numberSponsoredClient =(int) command.ExecuteScalar();
+
+                return numberSponsoredClient;
             }
         }
          public static ClientDTO Create (ClientDTO client)

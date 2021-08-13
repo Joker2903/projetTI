@@ -1,4 +1,4 @@
 <div class="detail-gift item" (click)="navigateToSingleGift()">
-  <p class="descritpion">{{ gift.descritpion }}</p>
-  <button class="delete delete-gift" (click)="emitDeletedGift()">Delete</button>
+  <p class="descritpion">{{ gift.description }}</p>
+  <button class="delete delete-gift" (click)="emitDeletedGift($event)">Delete</button>
 </div>

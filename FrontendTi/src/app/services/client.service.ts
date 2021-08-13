@@ -19,6 +19,9 @@ export class ClientService {
   get(id: number): Observable<ClientDTO> {
     return this.http.get<ClientDTO>(`${this.URL_API}/${id}`)
   }
+  getSponsoredClientByID(id: number): Observable<number> {
+    return this.http.get<number>(`${this.URL_API}/sponsor/${id}`)
+  }
 
   post(clientDTO: ClientDTO): Observable<ClientDTO> {
     return this.http.post<ClientDTO>(this.URL_API, clientDTO)

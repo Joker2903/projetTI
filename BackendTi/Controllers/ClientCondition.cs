@@ -18,9 +18,18 @@ namespace BackendTi.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public ActionResult<ClientConditionDTO> GetByID(int id)
+        public ActionResult<ClientConditionDTO[]> GetByClientID(int id)
         {
-            return Ok(ClientConditionDAO.GetByID(id));
+            return Ok(ClientConditionDAO.GetByClientID(id));
+        }
+        [HttpGet]
+        [Route("both/{clientID}/{conditionID}")]
+        public ActionResult<ClientConditionDTO> GetByBothID(int clientID, int conditionID)
+        {
+            // if (ClientConditionDAO.GetByBothID(clientID,conditionID) == null){
+            //     return NoContent();
+            // }
+            return Ok(ClientConditionDAO.GetByBothID(clientID,conditionID));
         }
 
         [HttpPost]

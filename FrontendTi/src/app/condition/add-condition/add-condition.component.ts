@@ -9,7 +9,7 @@ import { Condition } from 'src/app/model/condition';
 })
 export class AddConditionComponent implements OnInit {
   addConditionForm: FormGroup = this.initForm();
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -27,12 +27,12 @@ export class AddConditionComponent implements OnInit {
   onSubmit() {
     console.log(this.addConditionForm.controls);
     const condition = new Condition();
-    condition.NumberOfClient =
+    condition.numberOfClient =
       +this.addConditionForm.get('numberOfClient')?.value;
-    condition.StartDate = this.addConditionForm.get('startDate')?.value;
-    condition.EndDate = this.addConditionForm.get('endDate')?.value;
-    condition.Expiration = +this.addConditionForm.get('expiration')?.value;
-    condition.GiftId = +this.addConditionForm.get('giftId')?.value;
+    condition.startDate = this.addConditionForm.get('startDate')?.value;
+    condition.endDate = this.addConditionForm.get('endDate')?.value;
+    condition.expiration = +this.addConditionForm.get('expiration')?.value;
+    condition.giftId = +this.addConditionForm.get('giftId')?.value;
     console.log(condition);
   }
 }

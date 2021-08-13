@@ -12,7 +12,7 @@ export class ListConditionComponent implements OnInit {
   private subscriptionsCondition: Subscription[] = [];
   public conditions: Condition[] = [];
 
-  constructor(private Conditionservice: ConditionsService) {}
+  constructor(private Conditionservice: ConditionsService) { }
 
   ngOnInit(): void {
     this.getConditions();
@@ -31,6 +31,7 @@ export class ListConditionComponent implements OnInit {
       this.conditions = conditionDto.map((conditionDTO) =>
         new Condition().fromConditionDTO(conditionDTO)
       );
+
       console.log(this.conditions);
     });
     this.subscriptionsCondition.push(sub);

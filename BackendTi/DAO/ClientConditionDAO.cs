@@ -12,7 +12,8 @@ namespace BackendTi.DAO
         public static readonly string FIELD_COMPLETEDDATE = "completedDate";
 
         private static readonly string REQ_QUERY = $"select * from {TABLE_NAME}";
-        private static readonly string REQ_GET = REQ_QUERY + $" where {FIELD_CONDITIONID} = @{FIELD_CONDITIONID}";
+        private static readonly string REQ_GET = REQ_QUERY + $" where {FIELD_CLIENTID} = @{FIELD_CLIENTID}";
+        private static readonly string REQ_GET_BOTH = REQ_QUERY + $" where {FIELD_CLIENTID} = @{FIELD_CLIENTID} and {FIELD_CONDITIONID} = @{FIELD_CONDITIONID}";
         private static readonly string REQ_POST =
             $"insert into {TABLE_NAME} ({FIELD_CLIENTID}, {FIELD_CONDITIONID},{FIELD_COMPLETEDDATE}) " +
             $"values (@{FIELD_CLIENTID},@{FIELD_CONDITIONID},@{FIELD_COMPLETEDDATE})";
@@ -38,16 +39,36 @@ namespace BackendTi.DAO
             }
         }
     
-        public static ClientConditionDTO GetByID (int id)
+        public static List<ClientConditionDTO> GetByClientID (int id)
         {
-    
+            List<ClientConditionDTO> clientCondition = new List<ClientConditionDTO>();
 
             using (var connection = Database.GetConnection())
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_GET;
-                command.Parameters.AddWithValue($"{FIELD_CONDITIONID}", id);
+                command.Parameters.AddWithValue($"{FIELD_CLIENTID}", id);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    clientCondition.Add(new ClientConditionDTO(reader));
+                }
+
+                return clientCondition;
+            }
+        }
+        public static ClientConditionDTO GetByBothID (int clientID, int conditionID)
+        {
+            using (var connection = Database.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_GET_BOTH;
+                command.Parameters.AddWithValue($"{FIELD_CLIENTID}", clientID);
+                command.Parameters.AddWithValue($"{FIELD_CONDITIONID}", conditionID);
 
                 SqlDataReader reader = command.ExecuteReader();
 

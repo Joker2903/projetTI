@@ -1,8 +1,5 @@
 <div class="list-gift container item-grids">
   <ng-container *ngFor="let gift of gifts">
-    <app-detail-gift
-      [gift]="gift"
-      (deletedGift)="deleteQuestion($event)"
-    ></app-detail-gift>
+    <app-detail-gift [gift]="gift" (deletedGift)="deleteGift($event)"></app-detail-gift>
   </ng-container>
 </div>

@@ -18,9 +18,11 @@ import { SingleConditionComponent } from './condition/single-condition/single-co
 import { DetailGiftComponent } from './gift/detail-gift/detail-gift.component';
 import { ListGiftComponent } from './gift/list-gift/list-gift.component';
 import { SingleGiftComponent } from './gift/single-gift/single-gift.component';
+import { ClientConditionsComponent } from './client/client-conditions/client-conditions.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
-  declarations: [AppComponent, AddGiftComponent, AddClientComponent, AddConditionComponent, ListClientComponent, DetailClientComponent, HeaderComponent, SingleClientComponent, SigninComponent, DetailConditionComponent, ListConditionComponent, SingleConditionComponent, DetailGiftComponent, ListGiftComponent, SingleGiftComponent],
+  declarations: [AppComponent, AddGiftComponent, AddClientComponent, AddConditionComponent, ListClientComponent, DetailClientComponent, HeaderComponent, SingleClientComponent, SigninComponent, DetailConditionComponent, ListConditionComponent, SingleConditionComponent, DetailGiftComponent, ListGiftComponent, SingleGiftComponent, ClientConditionsComponent, NotificationsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

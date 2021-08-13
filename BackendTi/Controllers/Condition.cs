@@ -15,6 +15,12 @@ namespace BackendTi.Controllers
         {
             return Ok(ConditionDAO.Query());
         }
+        [HttpGet]
+        [Route("gift")]
+        public ActionResult<IEnumerable<ConditionGiftDTO>> QueryGiftCondition()
+        {
+            return Ok(ConditionDAO.QueryGiftCondition());
+        }
 
         [HttpGet]
         [Route("{id}")]

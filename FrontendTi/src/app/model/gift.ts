@@ -1,19 +1,19 @@
 import { GiftDTO } from '../dto/giftDTO';
 
 export class Gift {
-  private _GiftID: number;
+  private _giftID: number;
 
-  private _Description: string;
+  private _description: string;
 
   constructor(GiftID: number = -1, Description: string = '') {
-    this._GiftID = GiftID;
-    this._Description = Description;
+    this._giftID = GiftID;
+    this._description = Description;
   }
 
   toGiftDTO(): GiftDTO {
     return {
-      GiftID: this._GiftID,
-      Description: this._Description,
+      giftID: this._giftID,
+      description: this._description,
     };
   }
 
@@ -24,20 +24,20 @@ export class Gift {
 
   equals(obj: any): boolean {
     if (obj instanceof Gift) {
-      return this._GiftID === (<Gift>obj)._GiftID;
+      return this._giftID === (<Gift>obj)._giftID;
     }
     return false;
   }
-  public get Description(): string {
-    return this._Description;
+  public get description(): string {
+    return this._description;
   }
-  public set Description(value: string) {
-    this._Description = value;
+  public set description(value: string) {
+    this._description = value;
   }
-  public get GiftID(): number {
-    return this._GiftID;
+  public get giftID(): number {
+    return this._giftID;
   }
-  public set GiftID(value: number) {
-    this._GiftID = value;
+  public set giftID(value: number) {
+    this._giftID = value;
   }
 }
