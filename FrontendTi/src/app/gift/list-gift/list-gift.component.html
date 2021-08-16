@@ -1,5 +1,12 @@
-<div class="list-gift container item-grids">
-  <ng-container *ngFor="let gift of gifts">
-    <app-detail-gift [gift]="gift" (deletedGift)="deleteGift($event)"></app-detail-gift>
-  </ng-container>
+<div class="list-gift">
+  <h1 class="header-page header-client">Gifts .</h1>
+  <div class="flex">
+
+    <div class="display-client item-grids">
+      <ng-container *ngFor="let gift of gifts">
+        <app-detail-gift [gift]="gift" (deletedGift)="deleteGift($event)"></app-detail-gift>
+      </ng-container>
+    </div>
+    <app-add-gift (emitAddedGift)="emitAddedGift($event)"></app-add-gift>
+  </div>
 </div>

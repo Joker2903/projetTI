@@ -1,0 +1,18 @@
+.add-client{
+    padding: 2rem;
+    background: var(--light-blue);
+    border-radius: 25px 0 25px 0;
+}
+.add-client h2.header-add-client{
+    font-family: 'Lobster';
+    color: var(--secondary-color);
+    font-size: 3rem;
+
+}
+.add-client .input-icon svg {
+    width: 24px;
+    height: 24px;
+}
+.add-client .form-control input{
+    font-size: 1rem;
+}

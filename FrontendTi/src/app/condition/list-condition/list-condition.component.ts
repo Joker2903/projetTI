@@ -36,4 +36,8 @@ export class ListConditionComponent implements OnInit {
     });
     this.subscriptionsCondition.push(sub);
   }
+
+  emitAddedCondition($event: Condition) {
+    this.conditions.push($event)
+  }
 }

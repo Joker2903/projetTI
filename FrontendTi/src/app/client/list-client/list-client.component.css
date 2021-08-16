@@ -1,0 +1,12 @@
+.list-client{
+    
+}
+
+.display-client{
+    flex: 3;
+    margin-right: 1rem;
+}
+.client-panel .add-client{
+    flex: 1;
+    margin-left: 1rem;
+}

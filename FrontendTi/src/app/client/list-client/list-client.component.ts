@@ -13,7 +13,7 @@ export class ListClientComponent implements OnInit, OnDestroy {
   private subscriptionsClients: Subscription[] = [];
   public clients: Client[] = [];
 
-  constructor(private clientService: ClientService, private router: Router) {}
+  constructor(private clientService: ClientService, private router: Router) { }
 
   ngOnInit(): void {
     this.getClients();
@@ -46,6 +46,9 @@ export class ListClientComponent implements OnInit, OnDestroy {
     console.log(this.clients);
 
     this.subscriptionsClients.push(sub);
+  }
+  addEmittedClient($event: Client) {
+    this.clients.push($event)
   }
 
   AddClient() {

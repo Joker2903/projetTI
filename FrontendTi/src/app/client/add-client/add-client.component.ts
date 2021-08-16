@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Client } from 'src/app/model/client';
@@ -14,6 +14,8 @@ export class AddClientComponent implements OnInit, OnDestroy {
   private subscriptionPostClient: Subscription = new Subscription()
   private subscriptionsQueryClients: Subscription[] = []
   clients: Client[] = [];
+  @Output()
+  emitAddedClient: EventEmitter<Client> = new EventEmitter<Client>()
   constructor(private formBuilder: FormBuilder, private clientService: ClientService) { }
 
 
@@ -37,7 +39,6 @@ export class AddClientComponent implements OnInit, OnDestroy {
       lastname: ['', Validators.required],
       mail: ['', Validators.required],
       sponsorID: [''],
-      password: ['', Validators.required],
     });
     return this.addClientForm;
   }
@@ -59,11 +60,11 @@ export class AddClientComponent implements OnInit, OnDestroy {
     client.lastname = this.addClientForm.get('lastname')?.value;
     client.mail = this.addClientForm.get('mail')?.value;
     client.sponsorID = +this.addClientForm.get('sponsorID')?.value;
-    client.password = this.addClientForm.get('password')?.value;
+    client.password = "1234"
     console.log(client);
     const sub = this.clientService
       .post(client.toClientDTO())
-      .subscribe(clientDTO => console.log(clientDTO)
+      .subscribe(clientDTO => this.emitAddedClient.next(new Client().fromClientDTO(clientDTO))
       )
     this.subscriptionPostClient = sub;
   }

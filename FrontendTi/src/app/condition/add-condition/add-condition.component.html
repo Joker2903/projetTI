@@ -19,9 +19,9 @@
     <div class="form-control">
       <label for="giftId">giftId</label>
       <select name="giftId" id="giftId" formControlName="giftId">
-        <option value="1">New Car</option>
-        <option value="2">New Wife</option>
-        <option value="3">New World</option>
+        <option *ngFor="let gift of gifts" [value]="gift.giftID">
+          {{ gift.description }}
+        </option>
       </select>
     </div>
     <button [disabled]="addConditionForm.invalid">Add</button>

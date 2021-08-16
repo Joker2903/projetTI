@@ -43,8 +43,8 @@ export class SingleClientComponent implements OnInit, OnDestroy {
     return (this.updateClientForm = this.formBuilder.group({
       firstname: [this.client.firstname, Validators.required],
       lastname: [this.client.lastname, Validators.required],
-      mail: [this.client.mail, Validators.required],
-      sponsorID: [''],
+      mail: [this.client.mail, Validators.required]
+      // sponsorID: [''],
     }));
   }
 
@@ -72,7 +72,6 @@ export class SingleClientComponent implements OnInit, OnDestroy {
     this.client.firstname = this.updateClientForm.get('firstname')?.value;
     this.client.lastname = this.updateClientForm.get('lastname')?.value;
     this.client.mail = this.updateClientForm.get('mail')?.value;
-    this.client.sponsorID = +this.updateClientForm.get('sponsorID')?.value;
     console.log(this.client);
     const sub = this.clientService
       .put(this.client.toClientDTO())

@@ -1,0 +1,16 @@
+h3.header{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+.mail{
+    display: flex;
+}
+.mail-icon{
+    display: flex;
+    width: 26px;
+    background: var(--primary-color);
+    padding: 0.2rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}

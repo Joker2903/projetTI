@@ -1,7 +1,6 @@
-<div class="detail-condition item" (click)="navigateToSingleCondition()">
-  <p class="numberOfClient">{{ condition.numberOfClient}}</p>
-  <p class="startDate">{{ condition.startDate | date:'longDate'}}</p>
-  <p class="endDate">{{ condition.endDate | date:'longDate'}}</p>
-  <p class="expiration">{{ condition.expiration }}</p>
-  <p class="giftID">{{ condition.giftId }}</p>
+<div class="detail-condition item">
+  <p class="availability">Available from {{ condition.startDate | date:'longDate'}} to {{ condition.endDate |
+    date:'longDate'}}</p>
+  <p class="expiration">Expires after {{ condition.expiration }} days.</p>
+  <p class="giftID">You receive {{ giftContent }}</p>
 </div>

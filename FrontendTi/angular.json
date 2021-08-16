@@ -20,8 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            // CHANGE LE PATH ABSOLU VERS LE BACKENDTI SUR TON PC, PAS TOUCHE A WWWROOT etc..
-            "outputPath": "D:/HELHA/HELHA/robin_claes/projetTI/BackendTi/wwwroot/js/AngularApp",
+            "outputPath": "D:/projet/projetTI/BackendTi/wwwroot/js/AngularApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",

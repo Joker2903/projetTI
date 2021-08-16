@@ -44,4 +44,7 @@ export class ListGiftComponent implements OnInit {
 
     this.subscriptionsGifts.push(sub);
   }
+  emitAddedGift($event: Gift) {
+    this.gifts.push($event)
+  }
 }

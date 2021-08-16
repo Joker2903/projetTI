@@ -1,5 +1,12 @@
-<div class="list-condition container item-grids">
-  <ng-container *ngFor="let condition of conditions">
-    <app-detail-condition [condition]="condition"></app-detail-condition>
-  </ng-container>
+<div class="list-condition">
+  <h1 class="header-page header-client">Conditions .</h1>
+  <div class="flex">
+
+    <div class="display-client item-grids">
+      <ng-container *ngFor="let condition of conditions">
+        <app-detail-condition [condition]="condition"></app-detail-condition>
+      </ng-container>
+    </div>
+    <app-add-condition (emitAddedCondition)="emitAddedCondition($event)"></app-add-condition>
+  </div>
 </div>

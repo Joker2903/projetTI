@@ -1,23 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Poppins&display=swap');
+
 *, ::before, ::after{
+    
+    /* font-family: 'Lobster', cursive; */
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+:root {
+    --primary-color: #1372E2;
+    --secondary-color: #E5459C;
+    --light-yellow: #FFFEF8;
+    --light-blue: #E5F1FF;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    background: var(--light-yellow);
+}
+.full-container{
+    margin: 0 auto auto 70px;
+}
 .container{
-    width: 90%!important;
+    width: 90%;
     margin: 0 auto;
 }
 .item-grids{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 0.5rem;
-    margin: 1rem auto;
+    grid-template-rows: 1fr;
+    grid-gap: 1rem;
+}
+a, button{
+    cursor: pointer;
 }
 .item{
-    padding: 0.7rem 0.5rem;
-    border: 1px solid black;
+    padding: 1.2rem 1rem;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 25px 0 25px;
+    background: var(--light-blue);
 }
 .flex{
     display: flex;
@@ -34,4 +56,58 @@
 }
 .same-flex{
     flex: 1;
+}
+.hidden{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
+
+/* forms */
+.form-control{
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+}
+input{
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    padding: 0 0.8rem;
+    font-size: 1.4rem;
+}
+select{
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+span.input-icon{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--primary-color);
+    border-radius: 10px 0 0 10px;
+}
+button{
+    border: none;
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+button:hover{
+    background: white;
+    color: var(--primary-color);
+}
+/* Styles golabl across pages */
+h1.header-page{
+    margin: 3rem 0;
+    font-family: 'Lobster';
+    font-size: 72px;
+    color: var(--primary-color);
 }

@@ -1,9 +1,15 @@
-<div class="list-client container item-grids">
-  <ng-container *ngFor="let client of clients">
-    <app-detail-client
-      [client]="client"
-      (deletedClient)="deleteQuestion($event)"
-    ></app-detail-client>
-  </ng-container>
-  <button class="add add-client" (click)="AddClient()">add</button>
+<div class="list-client ">
+  <h1 class="header-page header-client">Clients .</h1>
+  <div class="flex">
+
+    <div class="display-client item-grids">
+      <ng-container *ngFor="let client of clients">
+        <app-detail-client [client]="client" (deletedClient)="deleteQuestion($event)"></app-detail-client>
+      </ng-container>
+    </div>
+    <div class="add-client">
+      <app-add-client (emitAddedClient)="addEmittedClient($event)"></app-add-client>
+    </div>
+  </div>
+
 </div>

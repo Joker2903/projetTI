@@ -14,9 +14,7 @@ namespace BackendTi.DTO
         {
             this.GiftID = GiftID;
             this.Description = Description;
-            // {
-            //     "Description" : "Lalalalalala"
-            // }
+            
         }
 
         public GiftDTO()
